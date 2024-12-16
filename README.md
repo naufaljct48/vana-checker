@@ -54,16 +54,25 @@ node index.js
 ## Output
 
 The script generates a `vana_balance_check.txt` with the following information:
-- Seed Phrase
-- Derived Address
-- Balance
-- Validation Status
-`Seed Phrase | Address | Balance | Status`
-`------------------------------------------------------------`
-`phrase 1     | 0xabc...123 | 100.00000000 VANA | Valid`
-`phrase 2     | N/A       | 0.00000000 VANA | Invalid`
-`phrase 3     | 0xdef...456 | 0.00000000 VANA | Not Found`
 
+### Output Format
+```
+Seed Phrase | Address | Balance | Status
+------------------------------------------------------------
+twelve word seed phrase here | 0x1234...5678 | 100.00000000 VANA | Valid
+another twelve word seed phrase | N/A | 0.00000000 VANA | Invalid Seed
+third seed phrase | 0x9876...5432 | 0.00000000 VANA | 404 Not Found
+```
+
+### Column Details
+- **Seed Phrase**: The original 12-word seed phrase
+- **Address**: Derived Ethereum address (if valid)
+- **Balance**: VANA token balance (in VANA)
+- **Status**: 
+  - `Valid`: Seed phrase is valid and an address was derived
+  - `Invalid Seed`: Seed phrase failed validation
+  - `Not Found`: Address exists but no balance data
+  - `Error`: API or network issues occurred
 
 ## Error Handling
 
