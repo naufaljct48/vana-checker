@@ -1,6 +1,7 @@
 # Vana Address Checker
 
 ## Overview
+![image](https://github.com/user-attachments/assets/ee3c108d-ba55-471d-b668-ad515435ce6c)
 
 This Node.js script is designed to check the balance of Ethereum addresses derived from BIP39 seed phrases specifically for the Vana blockchain. It provides functionality to:
 
@@ -53,10 +54,25 @@ node index.js
 ## Output
 
 The script generates a `vana_balance_check.txt` with the following information:
-- Seed Phrase
-- Derived Address
-- Balance
-- Validation Status
+
+### Output Format
+```
+Seed Phrase | Address | Balance | Status
+------------------------------------------------------------
+twelve word seed phrase here | 0x1234...5678 | 100.00000000 VANA | Valid
+another twelve word seed phrase | N/A | 0.00000000 VANA | Invalid Seed
+third seed phrase | 0x9876...5432 | 0.00000000 VANA | 404 Not Found
+```
+
+### Column Details
+- **Seed Phrase**: The original 12-word seed phrase
+- **Address**: Derived Ethereum address (if valid)
+- **Balance**: VANA token balance (in VANA)
+- **Status**: 
+  - `Valid`: Seed phrase is valid and an address was derived
+  - `Invalid Seed`: Seed phrase failed validation
+  - `Not Found`: Address exists but no balance data
+  - `Error`: API or network issues occurred
 
 ## Error Handling
 
@@ -77,10 +93,6 @@ The script generates a `vana_balance_check.txt` with the following information:
 3. Commit your changes
 4. Push to the branch
 5. Create a new Pull Request
-
-## License
-
-[Specify your license here, e.g., MIT]
 
 ## Disclaimer
 
