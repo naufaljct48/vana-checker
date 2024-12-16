@@ -58,11 +58,11 @@ The script generates a `vana_balance_check.txt` with the following information:
 - Derived Address
 - Balance
 - Validation Status
-`Seed Phrase | Address | Balance | Status
-------------------------------------------------------------
-phrase 1     | 0xabc...123 | 100.00000000 VANA | Valid
-phrase 2     | N/A       | 0.00000000 VANA | Invalid
-phrase 3     | 0xdef...456 | 0.00000000 VANA | Not Found`
+`Seed Phrase | Address | Balance | Status`
+`------------------------------------------------------------`
+`phrase 1     | 0xabc...123 | 100.00000000 VANA | Valid`
+`phrase 2     | N/A       | 0.00000000 VANA | Invalid`
+`phrase 3     | 0xdef...456 | 0.00000000 VANA | Not Found`
 
 
 ## Error Handling
